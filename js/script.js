@@ -45,8 +45,21 @@ if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
     }
     if (isLetterPresent === false) { //SE NON HA TROVATO LA @ BLOCCA PROGRAMMA
         alert(`Email non valida`);
+
     } else { //ALTRIMENTI CONTINUA
 
+        const emailLower = enteredEmail.toLowerCase() //MI ASSICURO CHE IL DATO PASSATO SIA TUTTO IN PICCOLO
+        const emailPart = enteredEmail.split("@") //DIVIDO IL NOME PER STAMPARE SOLO QUELLO IN CONSOLE
+        const nameUser = emailPart[0] //SALVO IL NOME DELL'UTENTE
+
+        //------ CONTROLLO ARRAY PER LA CORRISPONDENZA EMAIL -----------    
+        for (let i = 0; i < emailLower.length; i++) {
+            if (emailLower === invitedUsers[i]) {
+                userFound = true;
+            }
+        }
+
+        console.log(userFound ? `${nameUser} benvenuto` : `${nameUser} purtroppo non sei tra gli invitati`)
     }
 }
 
