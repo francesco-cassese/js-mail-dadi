@@ -47,13 +47,13 @@ if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
     if (isLetterPresent === false) { //SE NON HA TROVATO LA @ BLOCCA PROGRAMMA
         alert(`Email non valida`);
 
-    } else if (hasSpace) {
+    } else if (hasSpace) { //SE L'EMAIL CONTIENE SPAZI BLOCCA
         alert(`L'Email non può contenere spazi`);
 
     } else { //ALTRIMENTI CONTINUA
 
         const emailLower = enteredEmail.toLowerCase() //MI ASSICURO CHE IL DATO PASSATO SIA TUTTO IN PICCOLO
-        const emailPart = emailLower.split("@");
+        const emailPart = emailLower.split('@'); //DIVIDO LA STRINGA PER ESTRAPOLARNE SOLO IL NOME
         const nameUser = emailPart[0] //SALVO IL NOME DELL'UTENTE
 
         //------ CONTROLLO ARRAY PER LA CORRISPONDENZA EMAIL -----------    
@@ -63,7 +63,7 @@ if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
             }
         }
 
-        console.log(userFound ? `${nameUser} benvenuto` : `${nameUser} purtroppo non sei tra gli invitati`)
+        console.log(userFound ? `Benvenuto ${nameUser}` : `${nameUser} purtroppo non sei tra gli invitati`)
     }
 }
 
