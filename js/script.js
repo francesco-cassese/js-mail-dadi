@@ -26,6 +26,7 @@ const enteredEmail = prompt('Inserisci qui la tua Email');
 
 let userFound = false; //Creo variabile da usare nel for
 let isLetterPresent = false; //Variabile per la validazione 
+let hasSpace = false;
 
 //------- CONTROLLI ------------
 if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
@@ -38,13 +39,16 @@ if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
     for (let i = 0; i < enteredEmail.length; i++) { //INIZIO IL CONTROLLO SULLE PAROLE 
         const carattere = enteredEmail[i];
         if (carattere === " ") { //L'EMAIL NON DEVE CONTENERE SPAZIO
-            alert(`L'Email non può contenere spazi`);
+            hasSpace = true;
         } else if (carattere === `@`) { //SE TROVA LA @ CAMBIA LO STATO DELLA VARIABILE IN TRUE
             isLetterPresent = true;
         }
     }
     if (isLetterPresent === false) { //SE NON HA TROVATO LA @ BLOCCA PROGRAMMA
         alert(`Email non valida`);
+
+    } else if (hasSpace) {
+        alert(`L'Email non può contenere spazi`);
 
     } else { //ALTRIMENTI CONTINUA
 
