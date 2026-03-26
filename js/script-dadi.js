@@ -1,4 +1,4 @@
-'use script';
+'use strict';
 
 //------ Variabili  -------
 let player;
@@ -28,7 +28,7 @@ for (let i = 0; i < numRound; i++) {
 
 // ---- Stampo i risultati sommati ----
 
-console.log(`Player: ${totPlayer} Computer: ${totComputer}`)
+console.log(`Player: ${totPlayer} Computer: ${totComputer}`);
 
 // ---- Condizioni per il messaggio finale ----
 console.log(
