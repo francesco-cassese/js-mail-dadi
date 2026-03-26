@@ -53,7 +53,7 @@ if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
     } else { //ALTRIMENTI CONTINUA
 
         const emailLower = enteredEmail.toLowerCase() //MI ASSICURO CHE IL DATO PASSATO SIA TUTTO IN PICCOLO
-        const emailPart = enteredEmail.split("@") //DIVIDO IL NOME PER STAMPARE SOLO QUELLO IN CONSOLE
+        const emailPart = emailLower.split("@");
         const nameUser = emailPart[0] //SALVO IL NOME DELL'UTENTE
 
         //------ CONTROLLO ARRAY PER LA CORRISPONDENZA EMAIL -----------    
