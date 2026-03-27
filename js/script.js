@@ -57,7 +57,7 @@ if (enteredEmail === null) { //SE L'UTENTE ANNULLA FERMO TUTTO
         const nameUser = emailPart[0] //SALVO IL NOME DELL'UTENTE
 
         //------ CONTROLLO ARRAY PER LA CORRISPONDENZA EMAIL -----------    
-        for (let i = 0; i < emailLower.length; i++) {
+        for (let i = 0; i < invitedUsers.length; i++) {
             if (emailLower === invitedUsers[i]) {
                 userFound = true;
             }
